@@ -23,6 +23,8 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
   vote:
     image: bretfisher/examplevotingapp_vote
     ports:
